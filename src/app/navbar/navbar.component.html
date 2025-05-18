@@ -1,14 +1,18 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" routerLink="/">Navbar</a>
+
+        <!-- Botón hamburguesa controlado por Angular -->
+        <button class="navbar-toggler" type="button" (click)="isMenuOpen = !isMenuOpen" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+        <!-- Menú colapsable usando Angular -->
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" [routerLink]="['music']">Apuntes Musica</a>
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link active" aria-current="page" routerLink="/" (click)="cerrarMenu()">Home</a>
+                <a class="nav-link" routerLink="/music" (click)="cerrarMenu()">Apuntes Música</a>
+                <a class="nav-link" routerLink="/inventory" (click)="cerrarMenu()">Libros</a>
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </div>
         </div>

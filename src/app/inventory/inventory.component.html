@@ -1,19 +1,19 @@
-<input type="text" [(ngModel)]="searchText" (input)="filtrarLibros()" class="form-control mb-3" placeholder="Buscar por nombre o autor">
+<input type="text" [(ngModel)]="searchText" (input)="filterbooks()" class="form-control mb-3" placeholder="Search by Name or author">
 <!-- Tabla --><table class="table table-hover">
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre del libro</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Lugar</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Location</th>
+        <th scope="col">Subject</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let libro of librosFiltrados">
-        <th scope="row">{{ libro.id }}</th>
-        <td>{{ libro.nombre }}</td>
-        <td>{{ libro.autor }}</td>
-        <td>{{ libro.lugar }}</td>
+    <tr *ngFor="let book of jsonBooks">
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.location }}</td>
+        <td>{{ book.subject }}</td>
     </tr>
     </tbody>
 </table>

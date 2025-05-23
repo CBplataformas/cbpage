@@ -16,25 +16,35 @@ import {HttpClient} from "@angular/common/http";
 export class InventoryComponent implements OnInit {
 
   searchText: string = '';
-  libros: any[] = [];
-  librosFiltrados: any[] = [];
+  books: any[] = [];
+  jsonBooks: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('data/libros.json')
+    this.http.get<any[]>('data/books.json')
         .subscribe(data => {
-          this.libros = data;
-          this.librosFiltrados = [...this.libros];
+          this.books = data;
+          this.jsonBooks = this.shuffleArray([...this.books]);
         });
   }
-  filtrarLibros() {
-    const texto = this.searchText.toLowerCase();
-    this.librosFiltrados = this.libros.filter(libro =>
-        libro.nombre.toLowerCase().includes(texto) ||
-        libro.autor.toLowerCase().includes(texto)
+  filterbooks() {
+    const text = this.searchText.toLowerCase();
+    this.jsonBooks = this.books.filter(book =>
+        book.name.toLowerCase().includes(text) ||
+        book.author.toLowerCase().includes(text) ||
+        book.subject.toLowerCase().includes(text)
     );
   }
+
+  shuffleArray(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
 
 
 

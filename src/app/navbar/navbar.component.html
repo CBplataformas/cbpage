@@ -12,7 +12,17 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" routerLink="/" (click)="cerrarMenu()">Home</a>
                 <a class="nav-link" routerLink="/music" (click)="cerrarMenu()">Apuntes Música</a>
-                <a class="nav-link" routerLink="/inventory" (click)="cerrarMenu()">Libros</a>
+                <li class="nav-item dropdown" (click)="cerrarMenu()">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inventories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/inventory">Books</a></li>
+                        <li><a class="dropdown-item" href="#">Stationeries</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </div>
         </div>

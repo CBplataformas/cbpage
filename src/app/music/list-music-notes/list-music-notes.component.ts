@@ -9,7 +9,6 @@ import {MusicFundamentalComponent} from "../music-fundamental/music-fundamental.
   selector: 'app-list-music-notes',
   standalone: true,
   imports: [
-    RouterLink,
     CommonModule,
     ArmoniaComponent,
     MusicFundamentalComponent

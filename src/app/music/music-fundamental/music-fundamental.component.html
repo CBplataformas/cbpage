@@ -1,6 +1,19 @@
 <button (click)="back.emit()">⬅ Back to the list</button>
 <p>(Spanish Version)</p>
-<div class="container">
+<div class="container-fluid">
+    <h2>Definiciones</h2>
+    <div class="row">
+        <div *ngFor="let card of words" class="col-lg-2 mb-3">
+            <div class="card text-center p-4"
+                [ngbPopover]="card.definicion"
+                popoverTitle="Definición"
+                triggers="click"
+                container="body">
+                <p class="m-0">{{ card.name }}</p>
+            </div>
+        </div>
+    </div>
+
     <h2>Asignatura de Medida</h2>
     <p>Es un numero fraccionario que definen cuantos tiempos hay en un compas</p>
     <ul>
@@ -8,16 +21,24 @@
         <li>Compuestos</li>
         <li>Amlgamado</li>
     </ul>
-    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <p>La medida por compas este tiene un numerado / denominador que detallan la métrica del compás:</p>
+    <ul>
+        <li><strong>Numerador:</strong> Cantidad de figurar en el compas</li>
+        <li><strong>Denominador:</strong> Figura que representa en el compas
+        <ul>
+            <li>4 = Negra</li>
+            <li>2 = Blanca</li>
+            <li>8 = Corchea</li>
+        </ul>
+        </li>
+    </ul>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" (activeIdChange)="onTabChange($event)" class="nav-tabs">
         <li [ngbNavItem]="1">
-            <button ngbNavLink>One</button>
+            <button ngbNavLink>A.M. Simple</button>
             <ng-template ngbNavContent>
-                <p>
-                    Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-                    master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-                    keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                    salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
-                </p>
+                <p>Está representado por una subdivisión binaria.</p>
+                <code>(2 - 3 - 4) →  (2/2, 3/4, 4/4, 2/4)</code>
+                <div id="output"></div>
             </ng-template>
         </li>
         <li [ngbNavItem]="2">

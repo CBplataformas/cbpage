@@ -1,0 +1,6 @@
+.container-fluid{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#output { border: 1px solid #ccc; }

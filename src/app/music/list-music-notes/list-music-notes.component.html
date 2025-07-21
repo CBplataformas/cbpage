@@ -1,0 +1,14 @@
+<div class="grid-container" *ngIf="!selectedId">
+    <div class="card" *ngFor="let card of cards" (click)="selectCard(card.id)">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+    </div>
+</div>
+
+<div *ngIf="selectedId === '1'">
+    <app-armonia (back)="goBack()"></app-armonia>
+</div>
+<div *ngIf="selectedId === '2'">
+    <app-music-fundamental (back)="goBack()"></app-music-fundamental>
+</div>
+

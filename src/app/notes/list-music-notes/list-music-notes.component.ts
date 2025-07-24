@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Card} from "./card.model";
+import {Card} from "../card.model";
 import {RouterLink} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {ArmoniaComponent} from "../armonia/armonia.component";

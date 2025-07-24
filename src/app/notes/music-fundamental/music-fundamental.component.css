@@ -1,11 +1,7 @@
-/* cards-grid.component.css */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 1rem;
+.container-fluid{
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
-
 .card {
     padding: 1rem;
     background-color: white;
@@ -15,14 +11,9 @@
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
-
 .card:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+#output { border: 1px solid #ccc; }

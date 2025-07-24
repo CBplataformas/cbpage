@@ -12,6 +12,7 @@ import {CommonModule} from "@angular/common";
 })
 export class MusicFundamentalComponent implements AfterViewInit {
   @Output() back = new EventEmitter<void>();
+
   words =  [
     { name: 'Monocordio', definicion: 'cercana a un bajo'},
     { name: 'Semiología', definicion: 'Estudio de los símbolos'},

@@ -4,7 +4,7 @@ import {NgForOf} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
-  selector: 'ap-inventory',
+  selector: 'app-inventory',
   standalone: true,
   imports: [
     FormsModule,

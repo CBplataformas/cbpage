@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ap-stationery-inventory',
+  selector: 'app-stationery-inventory',
   standalone: true,
   imports: [],
   templateUrl: './stationery-inventory.component.html',

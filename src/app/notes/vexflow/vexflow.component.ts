@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ap-vexflow',
+  selector: 'app-vexflow',
   standalone: true,
   imports: [],
   templateUrl: './vexflow.component.html',

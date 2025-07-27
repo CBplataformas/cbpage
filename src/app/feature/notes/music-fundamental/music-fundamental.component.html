@@ -69,6 +69,60 @@
             </ng-template>
         </li>
     </ul>
-
     <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+    <h2 class="mt-5">Reconocimiento de escalas Mayores</h2>
+
+    <p>Amtes de mirar cada partitura en primera instacia hay casos practicos para reconocer que tipo de tonalidad fue escrito la partitura:</p>
+    <ul ngbNav #nav2="ngbNav" [(activeId)]="active2" [destroyOnHide]="false" class="nav-tabs">
+        <li [ngbNavItem]="1" [destroyOnHide]="true">
+            <button ngbNavLink>Sostenidos</button>
+            <ng-template ngbNavContent>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <p><strong>Regla de oro</strong></p>
+                            <p><i>La tonalidad mayor esta  un semitono arriba del ultimo sostenido</i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Ejemplo:</h3>
+                <ul class="mb-4">
+                    <li><strong>Armadura:</strong> Fa#, Do#, Sol#</li>
+                    <li><strong>Ultimo sostenido:</strong> Sol#</li>
+                    <li>Sol♯ → La → 👉  <strong>Tonalidad mayor:</strong> La mayor</li>
+                </ul>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <button ngbNavLink>Bemoles</button>
+            <ng-template ngbNavContent>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <p><strong>Regla de oro</strong></p>
+                            <p><i>La tonalidad mayor está en el penúltimo bemol.</i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Ejemplo:</h3>
+                <ul class="mb-4">
+                    <li><strong>Armadura:</strong> Si♭, Mi♭, La♭, Re♭</li>
+                    <li><strong>Penúltimo bemol: </strong> Lab → 👉 Tonalidad mayor: La♭ mayor</li>
+                </ul>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+            <button ngbNavLink>Three</button>
+            <ng-template ngbNavContent>
+
+
+            </ng-template>
+        </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav2" class="mt-2"></div>
 </div>

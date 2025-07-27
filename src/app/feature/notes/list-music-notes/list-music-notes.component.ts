@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {Card} from "../card.model";
-import {RouterLink} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {ArmoniaComponent} from "../armonia/armonia.component";
 import {MusicFundamentalComponent} from "../music-fundamental/music-fundamental.component";
+import {IntegratedMusicComponent} from "../integrated-music/integrated-music.component";
 
 @Component({
   selector: 'app-list-music-notes',
@@ -11,7 +11,8 @@ import {MusicFundamentalComponent} from "../music-fundamental/music-fundamental.
   imports: [
     CommonModule,
     ArmoniaComponent,
-    MusicFundamentalComponent
+    MusicFundamentalComponent,
+    IntegratedMusicComponent
   ],
   templateUrl: './list-music-notes.component.html',
   styleUrl: './list-music-notes.component.css'

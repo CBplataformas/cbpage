@@ -31,6 +31,7 @@ export class MusicFundamentalComponent implements AfterViewInit {
     { name: 'Armonía', definicion: 'es el conjunto de sonidos que suenan simultáneamente y que apoyan o acompañan la melodía. ' },
   ];
   active = 1;
+  active2 = 1;
   onTabChange(id: number) {
     if (id === 1) {
       setTimeout(() => this.drawScore(), 0); // Espera a que el DOM del tab se renderice
@@ -53,7 +54,7 @@ export class MusicFundamentalComponent implements AfterViewInit {
     const system = factory.System({ width: width - 20 });
 
     // Agregar pentagrama con compás y clave
-    const stave = system.addStave({
+    system.addStave({
       voices: [
         // Crea una voz con notas
         score.voice(score.notes('C4/q, D4/q, E4/q, F4/q'))

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {Card} from "../card.model";
-import {ArmoniaComponent} from "../armonia/armonia.component";
 import {MusicFundamentalComponent} from "../music-fundamental/music-fundamental.component";
 import {
     PrincipleArchitectureDesignComponent
@@ -13,7 +12,6 @@ import {
     imports: [
         NgForOf,
         NgIf,
-        ArmoniaComponent,
         MusicFundamentalComponent,
         PrincipleArchitectureDesignComponent
     ],

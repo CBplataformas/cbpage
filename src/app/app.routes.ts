@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {NotesComponent} from "./notes/notes.component";
-import {InventoryComponent} from "./inventory/inventory.component";
-import {ArmoniaComponent} from "./notes/armonia/armonia.component";
+import {NotesComponent} from "./feature/notes/notes.component";
+import {InventoryComponent} from "./feature/inventory/inventory.component";
+import {ArmoniaComponent} from "./feature/notes/armonia/armonia.component";
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},

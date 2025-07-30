@@ -5,7 +5,7 @@
     <div class="row">
         <div *ngFor="let card of words" class="col-lg-2 mb-3">
             <div class="card text-center p-4"
-                [ngbPopover]="card.definicion"
+                [ngbPopover]="card.definition"
                 popoverTitle="Definición"
                 triggers="click"
                 container="body">
@@ -84,6 +84,7 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <p><strong>Regla de oro</strong></p>
                             <p><i>La tonalidad mayor esta  un semitono arriba del ultimo sostenido</i></p>
+                            <p><i><strong>Orden sostendos:</strong> Fa - Do - Sol - Re - La - Mi - Si</i></p>
                         </div>
                     </div>
                 </div>
@@ -94,6 +95,28 @@
                     <li><strong>Ultimo sostenido:</strong> Sol#</li>
                     <li>Sol♯ → La → 👉  <strong>Tonalidad mayor:</strong> La mayor</li>
                 </ul>
+                <div class="row">
+                    <div *ngFor="let card of musicalNotes" class="col-lg-1 col-sm-1 mb-3">
+                        <div
+                                class="card text-center p-4"
+                                [ngbPopover]="popoverTemplate"
+                                [popoverContext]="{ card: card }"
+                                popoverTitle="Definición"
+                                triggers="click"
+                                container="body"
+                        >
+                            <p class="m-0">{{ card.name }}</p>
+                        </div>
+
+                        <!-- El let-card viene del objeto { card: card } -->
+                        <ng-template #popoverTemplate let-card="card">
+                            <div class="text-start">
+                                <strong>Sostenidos:</strong> {{ card.sharps }}<br />
+                                <strong>Relativa menor:</strong> {{ card.relativeMinor }}
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
             </ng-template>
         </li>
         <li [ngbNavItem]="2">
@@ -104,6 +127,7 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <p><strong>Regla de oro</strong></p>
                             <p><i>La tonalidad mayor está en el penúltimo bemol.</i></p>
+                            <p><i><strong>Orden bemoles:</strong> Si - Mi - La - Re - Sol - Do - Fa</i></p>
                         </div>
                     </div>
                 </div>
@@ -113,6 +137,28 @@
                     <li><strong>Armadura:</strong> Si♭, Mi♭, La♭, Re♭</li>
                     <li><strong>Penúltimo bemol: </strong> Lab → 👉 Tonalidad mayor: La♭ mayor</li>
                 </ul>
+                <div class="row">
+                    <div *ngFor="let card of musicalNotesBemol" class="col-lg-1 col-sm-1 mb-3">
+                        <div
+                                class="card text-center p-4"
+                                [ngbPopover]="popoverTemplate"
+                                [popoverContext]="{ card: card }"
+                                popoverTitle="Definición"
+                                triggers="click"
+                                container="body"
+                        >
+                            <p class="m-0">{{ card.name }}</p>
+                        </div>
+
+                        <!-- El let-card viene del objeto { card: card } -->
+                        <ng-template #popoverTemplate let-card="card">
+                            <div class="text-start">
+                                <strong>Bemoles:</strong> {{ card.bemol }}<br />
+                                <strong>Relativa menor:</strong> {{ card.relativeMinor }}
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
             </ng-template>
         </li>
         <li [ngbNavItem]="3">
@@ -125,4 +171,18 @@
     </ul>
 
     <div [ngbNavOutlet]="nav2" class="mt-2"></div>
+
+    <h2>Acordes</h2>
+    <p>Para la construccion de los acordes nos basamos siempre en las escalas mayores,y en base a eso se construye el acorde bajando o subiendo su tercera, quinta o septima</p>
+    <div class="row">
+        <div *ngFor="let card of chords" class="col-lg-2 mb-3">
+            <div class="card text-center p-4"
+                 [ngbPopover]="card.definition"
+                 popoverTitle="Definición"
+                 triggers="click"
+                 container="body">
+                <p class="m-0">{{ card.name }}</p>
+            </div>
+        </div>
+    </div>
 </div>
